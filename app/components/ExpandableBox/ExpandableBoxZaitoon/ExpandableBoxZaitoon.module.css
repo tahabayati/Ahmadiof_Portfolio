@@ -1,0 +1,29 @@
+.box {
+  width: 8rem;
+  height: 8rem;
+  background: #2563eb;
+  color: #fff;
+  font: 700 1.125rem/1.75rem sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border: 4px solid #fff;
+  transition: all 0.5s cubic-bezier(.4,0,.2,1);
+  position: static;
+}
+
+.boxOpen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  z-index: 50;
+}
