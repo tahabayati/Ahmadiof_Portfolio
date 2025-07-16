@@ -1,42 +1,37 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 1️⃣  Prevent any scroll on the outer document */
+html, body{
+  margin:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;      /* blocks the white strip */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* 2️⃣  Pin the snap container to fill the screen */
+.container{
+  position:fixed;       /* take it out of normal flow */
+  inset:0;              /* top:0; right:0; bottom:0; left:0 */
+  overflow-y:auto;      /* *only* this element scrolls */
+  scroll-snap-type:y mandatory;
+  scroll-behavior:smooth;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:100dvh;        /* true full height on every browser */
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* 3️⃣  One‑panel sections (unchanged except flex fix) */
+.section{
+  flex:0 0 100dvh;      /* never shrink, always full height */
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  font-weight:bold;
+  scroll-snap-align:start;
+  overflow:hidden;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+/* 4️⃣  Hide scrollbars everywhere (optional) */
+.container::-webkit-scrollbar{display:none;}
+.container{scrollbar-width:none;}
