@@ -24,7 +24,7 @@ export default function Projects(){
   const end=()=>ov?.route&&router.push(ov.route)
 
   return(
-    <section id="projects" className="section">
+    <section id="projects" className="section" style={{background:"#F6F3F4"}}>
       <div className={styles.grid}>
         {projects.map(p=>(
           <div key={p.id}

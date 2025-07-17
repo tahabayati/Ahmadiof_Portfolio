@@ -1,15 +1,13 @@
 .section{
-  background: #F6F3F4
+  background: #F6F3F4;
 }
-/* initial 120 × 120 red square */
-/* grid wrapper ‑‑ centred, never wider than 800px */
+
 .grid{
   display:flex;
   flex-direction:column;   /* vertical */
   gap:24px;
   max-width:800px;         /* never wider than 800 */
   width:100%;              /* but shrink on small screens */
-  margin:0 auto;           /* center the column */
   align-items:stretch;     /* each child fills the width */
 }
 
